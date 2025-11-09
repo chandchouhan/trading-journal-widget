@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Live Market Overview — Trading Journal Embed</title>
+  <style>
+    :root{color-scheme: dark;}
+    html,body{height:100%;margin:0;background:#0b0b0b;color:#ddd;font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;}
+    .container{max-width:1200px;margin:28px auto;padding:18px;border-radius:12px;background:#111;border:1px solid #222;}
+    h1{font-size:16px;margin:0 0 12px;color:#f28b82}
+    p.sub{margin:0 0 14px;color:#9a9a9a;font-size:13px}
+    .widget-wrap{background:transparent;border-radius:8px;overflow:hidden}
+    footer{margin-top:12px;color:#6e6e6e;font-size:12px;text-align:center}
+    a{color:#79b8ff}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Live Market Overview (Notion embed)</h1>
+    <p class="sub">Dark TradingView Market Overview widget. Edit the symbols below in the widget config if you want different pairs.</p>
+
+    <div class="widget-wrap">
+      <!-- TradingView Market Overview widget BEGIN -->
+      <div class="tradingview-widget-container">
+        <div id="tv-market-overview"></div>
+        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-market-overview.js" async>
+        {
+          "colorTheme": "dark",
+          "dateRange": "12M",
+          "showChart": true,
+          "locale": "en",
+          "largeChartUrl": "",
+          "isTransparent": true,
+          "width": "100%",
+          "height": "420",
+          "tabs": [
+            {
+              "title": "Forex",
+              "symbols": [
+                { "s": "FX:EURUSD" },
+                { "s": "FX:GBPUSD" },
+                { "s": "FX:USDJPY" },
+                { "s": "FX:USDCHF" },
+                { "s": "FX:AUDUSD" },
+                { "s": "FX:USDCAD" }
+              ]
+            },
+            {
+              "title": "Metals",
+              "symbols": [
+                { "s": "COMEX:GC1!" },
+                { "s": "ICE:PL1!" },
+                { "s": "OANDA:XAUUSD" }
+              ]
+            },
+            {
+              "title": "Indices",
+              "symbols": [
+                { "s": "INDEX:SPX" },
+                { "s": "INDEX:IUXX" },
+                { "s": "INDEX:DJI" },
+                { "s": "INDEX:NKY" }
+              ]
+            },
+            {
+              "title": "Crypto",
+              "symbols": [
+                { "s": "COINBASE:BTCUSD" },
+                { "s": "COINBASE:ETHUSD" },
+                { "s": "BINANCE:BNBUSDT" }
+              ]
+            }
+          ]
+        }
+        </script>
+      </div>
+      <!-- TradingView Market Overview widget END -->
+    </div>
+
+    <footer>Host this file with GitHub Pages and paste the GitHub Pages URL into Notion's <code>/embed</code> block.</footer>
+  </div>
+</body>
+</html>
